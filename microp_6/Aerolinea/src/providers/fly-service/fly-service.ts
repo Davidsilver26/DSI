@@ -17,7 +17,7 @@ export class FlyServiceProvider {
   private flys: Fly []=
   [
     {"idVuelo":"0001", "origen":"Madrid", "destino":"Londres", "fecha":new Date("2019-03-30")},
-    {"idVuelo":"0002", "origen":"Madrid", "destino":"Barcelona", "fecha":new Date("2019-03-25")},
+    {"idVuelo":"0002", "origen":"Madrid", "destino":"Barcelona", "fecha":new Date("2019-03-28")},
     {"idVuelo":"0003", "origen":"Madrid", "destino":"Berlín", "fecha":new Date("2019-04-03")},
     {"idVuelo":"0004", "origen":"Londres", "destino":"Madrid", "fecha":new Date("2019-05-28")},
     {"idVuelo":"0005", "origen":"Madrid", "destino":"Barcelona", "fecha":new Date("2019-03-30")},
