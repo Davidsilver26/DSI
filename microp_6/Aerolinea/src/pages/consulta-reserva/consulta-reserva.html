@@ -21,11 +21,55 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-note color="primary" style="font-size: 30px">Filtros de búsqueda</ion-note>
+
+  <form (ngSubmit)="onFlyFilters(f.value.origen, f.value.destino, f.value.fecha)" #f="ngForm">
+
     <ion-list>
-        <button ion-item *ngFor="let fly of flys">
+      <ion-item>
+          <ion-label>Origen</ion-label>
+          <ion-input type="text" aria-placeholder="Origen" name="origen" ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Destino</ion-label>
+          <ion-input type="text" aria-placeholder="Destino" name="destino" ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Fecha</ion-label>
+          <ion-input type="date" aria-placeholder="Fecha" name="fecha" ngModel></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button block type="submit" [disabled]="!f.valid">Aplicar</button>
+  </form>
+
+    <ion-list>
+      <ion-item *ngFor="let fly of flys">
+        <ion-label>
           <p><strong>ID Vuelo: </strong>{{fly.idVuelo}}</p>
           <p><strong>Origen: </strong>{{fly.origen}}</p>
           <p><strong>Destino: </strong>{{fly.destino}}</p>
-        </button>
-      </ion-list>
+          <p><strong>Fecha: </strong>{{fly.fecha.getDate() + '/' + (fly.fecha.getMonth()+1) + '/' + fly.fecha.getFullYear()}}</p>
+        </ion-label>
+
+        <ion-label>
+            <ion-buttons>
+                <button ion-button icon-only (click)="reserveFly(fly)">
+                  <ion-icon name="list-box"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-label>
+
+        <ion-label>
+          <ion-buttons>
+              <button ion-button icon-only color="danger" (click)="deleteFly(fly)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+          </ion-buttons>
+        </ion-label>
+      </ion-item>
+        
+    </ion-list>
 </ion-content>

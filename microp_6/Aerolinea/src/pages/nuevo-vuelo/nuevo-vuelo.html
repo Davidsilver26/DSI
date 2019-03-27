@@ -11,26 +11,31 @@
 </ion-header>
 
 <ion-content padding>
-  <form>
+  <form (ngSubmit)="onNewFly(f.value)" #f="ngForm">
     <ion-list>
 
       <ion-item>
         <ion-label>IdVuelo</ion-label>
-        <ion-input type="text" aria-placeholder="ID Vuelo" name="idVuelo"></ion-input>
+        <ion-input type="text" aria-placeholder="ID Vuelo" name="idVuelo" ngModel></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Origen</ion-label>
-        <ion-input type="text" aria-placeholder="Origen" name="origen"></ion-input>
+        <ion-input type="text" aria-placeholder="Origen" name="origen" ngModel></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Destino</ion-label>
-        <ion-input type="text" aria-placeholder="Destino" name="destino"></ion-input>
+        <ion-input type="text" aria-placeholder="Destino" name="destino" ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-input type="date" aria-placeholder="Fecha" name="fecha" ngModel></ion-input>
       </ion-item>
 
     </ion-list>
 
-    <button ion-button block type="submit">Crear</button>
+    <button ion-button block type="submit" [disabled]="!f.valid">Crear</button>
   </form>
 </ion-content>
