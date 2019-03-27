@@ -19,6 +19,7 @@ import { FlyServiceProvider } from '../../providers/fly-service/fly-service';
 export class ConsultaReservaPage {
 
   flys: Fly[] =[];
+  shownFlys: Fly[]= [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private FlyServiceProvider:FlyServiceProvider) {
   }
@@ -29,6 +30,28 @@ export class ConsultaReservaPage {
 
   addNewFly(){
     this.navCtrl.push(NuevoVueloPage);
+  }
+
+  reserveFly(value: Fly){
+    this.FlyServiceProvider.addReservedFly(value);
+  }
+
+  deleteFly(value: Fly){
+    this.flys = this.FlyServiceProvider.removeFly(value);
+  }
+
+  onFlyFilters(origen: string, destino: string, fecha: string){
+    this.flys = this.FlyServiceProvider.getFlys();
+    this.shownFlys = [];
+    var fechaDate = new Date(fecha);
+    for(var i = 0; i<this.flys.length; i++){
+      if( (origen == "" || origen == this.flys[i].origen) 
+      && (destino == "" || destino == this.flys[i].destino) 
+      && (fecha == "" || fechaDate.getTime() == this.flys[i].fecha.getTime())){
+        this.shownFlys.push(this.flys[i]);
+      }
+    }
+    this.flys = this.shownFlys;
   }
 
 }

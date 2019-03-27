@@ -1,0 +1,41 @@
+<!--
+  Generated template for the NuevoFacturacionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Facturación del vuelo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="onNewCheckIn(f.value.nombre, f.value.apellidos, f.value.pasaporte, f.value.numero)" #f="ngForm">
+        <ion-list>
+    
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input type="text" aria-placeholder="Nombre" name="nombre" ngModel></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Apellidos</ion-label>
+            <ion-input type="text" aria-placeholder="Apellidos" name="apellidos" ngModel></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Pasaporte</ion-label>
+            <ion-input type="text" aria-placeholder="Pasaporte" name="pasaporte" ngModel></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Número de emergencia</ion-label>
+            <ion-input type="tel" aria-placeholder="Numero" name="numero" ngModel></ion-input>
+          </ion-item>
+    
+        </ion-list>
+    
+        <button ion-button block type="submit" [disabled]="!f.valid">Facturar!</button>
+      </form>
+</ion-content>

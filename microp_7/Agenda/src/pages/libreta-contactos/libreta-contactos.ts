@@ -27,12 +27,10 @@ export class LibretaContactosPage {
     }
 
     onLoadContactosPage(){
-        debugger;
      this.navCtrl.push(NuevoContactoPage);
      }
 
     onItemTrapped($event, contact){
-        debugger;
         this.navCtrl.push(VerContactoPage);
     }
 }

@@ -6,10 +6,40 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>consulta-facturacion</ion-title>
+    <ion-title>Facturación de vuelos</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+      <ion-item *ngFor="let fly of facFlys">
+        <ion-label>
+           <p><strong>Origen: </strong>{{fly.origen}}</p>
+           <p><strong>Destino: </strong>{{fly.destino}}</p>
+           <p><strong>Fecha: </strong>{{fly.fecha.getDate() + '/' + (fly.fecha.getMonth()+1) + '/' + fly.fecha.getFullYear()}}</p>
+        </ion-label>
+  
+        <ion-label>
+          <ion-buttons>      
+            <button ion-button icon-only (click)="checkInFly(fly)" [disabled]="getCheckInDisabled(fly)">
+               Facturar
+              <ion-icon name="list-box"></ion-icon>
+            </button>
+          </ion-buttons>
+
+          <ion-buttons>
+            <button ion-button icon-only (click)="showBoardingPass(fly)" [disabled]="getBoardingPassDisabled(fly)">
+               Embarque
+              <ion-icon name="bookmarks"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-label>>
+
+      </ion-item>
+
+  </ion-list>
 
 </ion-content>

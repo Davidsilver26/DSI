@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { ConsultaReservaPage } from '../pages/consulta-reserva/consulta-reserva'
-import { ConsultaFacturacionPage } from '../pages/consulta-facturacion/consulta-facturacion'
+import { ConsultaReservaPage } from '../pages/consulta-reserva/consulta-reserva';
+import { ConsultaFacturacionPage } from '../pages/consulta-facturacion/consulta-facturacion';
+import { InfoLegalPage } from '../pages/info-legal/info-legal';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,9 +24,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
       { title: 'Reserva', component: ConsultaReservaPage},
-      { title: 'Facturación', component: ConsultaFacturacionPage}
+      { title: 'Facturación', component: ConsultaFacturacionPage},
+      { title: 'Información legal', component: InfoLegalPage},
     ];
 
   }
