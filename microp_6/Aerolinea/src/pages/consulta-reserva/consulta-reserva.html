@@ -48,7 +48,6 @@
     <ion-list>
       <ion-item *ngFor="let fly of flys">
         <ion-label>
-          <p><strong>ID Vuelo: </strong>{{fly.idVuelo}}</p>
           <p><strong>Origen: </strong>{{fly.origen}}</p>
           <p><strong>Destino: </strong>{{fly.destino}}</p>
           <p><strong>Fecha: </strong>{{fly.fecha.getDate() + '/' + (fly.fecha.getMonth()+1) + '/' + fly.fecha.getFullYear()}}</p>
@@ -62,13 +61,13 @@
             </ion-buttons>
         </ion-label>
 
-        <ion-label>
+        <!--ion-label>
           <ion-buttons>
               <button ion-button icon-only color="danger" (click)="deleteFly(fly)">
                 <ion-icon name="trash"></ion-icon>
               </button>
           </ion-buttons>
-        </ion-label>
+        </ion-label-->
       </ion-item>
         
     </ion-list>

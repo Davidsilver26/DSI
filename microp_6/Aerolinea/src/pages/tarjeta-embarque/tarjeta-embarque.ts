@@ -21,7 +21,6 @@ export class TarjetaEmbarquePage {
   flyCheckIn: checkIn;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private CheckInServiceProvider:CheckInServiceProvider) {
-    debugger;
     this.flyCheckIn = this.CheckInServiceProvider.getActualCheckIn();
   }
 
