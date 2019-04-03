@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Contact } from '../../providers/models/contact.model';
-import { ContactService } from '../../providers/services/contact.service';
+import { Contact } from '../../providers/models/models';
+import { ContactService } from '../../providers/services/services';
 
 /**
  * Generated class for the VerContactoPage page.

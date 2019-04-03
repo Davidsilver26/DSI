@@ -12,8 +12,8 @@ import { AngularFireDatabase } from "angularfire2/database";
 */
 @Injectable()
 export class ContactService{
- private contacts: Contact []=
-[{"nombre":"Andres","organizacion":"UC3M","movil":"666666666",correo:"andres@example.com"}];
+ //private contacts: Contact []=
+//[{"nombre":"Andres","organizacion":"UC3M","movil":"666666666",correo:"andres@example.com"}];
 
   private contactsRef = this.db.list<Contact>('AgendaFirebase');
  constructor(private db:AngularFireDatabase){

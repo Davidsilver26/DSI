@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ContactService } from '../../providers/services/contact.service';
+import { ContactService } from '../../providers/services/services';
 
 /**
  * Generated class for the NuevoContactoPage page.
