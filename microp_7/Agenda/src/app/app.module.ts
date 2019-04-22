@@ -16,6 +16,8 @@ import { FIREBASE_CONFIG } from '../app/firebase.credentials';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { VerContactoPage } from '../pages/ver-contacto/ver-contacto';
+import { PerfilAlumnoPage } from '../pages/perfil-alumno/perfil-alumno';
+import { QuizStatsProvider } from '../providers/quiz-stats/quiz-stats';
 
 @NgModule({
 declarations: [
@@ -26,6 +28,7 @@ declarations: [
  AcercaDePage,
  NuevoContactoPage,
  VerContactoPage,
+ PerfilAlumnoPage,
  ],
 imports: [
  BrowserModule,
@@ -42,12 +45,14 @@ entryComponents: [
  AcercaDePage,
  NuevoContactoPage,
  VerContactoPage,
+ PerfilAlumnoPage,
  ],
 providers: [
  StatusBar,
  SplashScreen,
  {provide: ErrorHandler, useClass: IonicErrorHandler},
- ContactService
+ ContactService,
+    QuizStatsProvider
  ]
 })
 export class AppModule {}
